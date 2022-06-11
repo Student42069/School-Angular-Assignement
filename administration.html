@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>LoftSoft</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="bootstrap.min.css" />
-    <script src="bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="css/bootstrap.bundle.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/administration.js"></script>
     <script
       src="https://kit.fontawesome.com/b3438c5636.js"
       crossorigin="anonymous"
     ></script>
-    <script src="jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
-    <script src="administration.js"></script>
   </head>
   <body>
     <div class="container">
@@ -83,7 +83,8 @@
           <option value="VueJS">VueJS</option>
           <option value="AngularJS">AngularJS</option>
         </select>
-        <form id="modif-formation" action="">
+
+        <form method="post" id="modif-formation" action="/appconnect">
           <label class="form-label h4" for="nomFormation"
             >Nom formation :</label
           >
@@ -133,9 +134,16 @@
         <select class="form-select fs-5 text mb-3" id="menu-employe">
           <option value="new">Nouvel employé</option>
           <option value="Esteban,Landrie">Esteban, Landrie</option>
+          <option value="Esteban,Landrie">Stephane, Brisebois</option>
+          <option value="Esteban,Landrie">Diego, Berniquez</option>
+          <option value="Esteban,Landrie">Anathole, Desmontagnes</option>
+          <option value="Esteban,Landrie">Dorethee, Desbecs</option>
+          <option value="Esteban,Landrie">Christian, Dior</option>
+          <option value="Esteban,Landrie">Yves, Saint-Laurent</option>
+          <option value="Esteban,Landrie">Margareth, Jonhson</option>
         </select>
 
-        <form id="modif-employe" action="">
+        <form method="post" id="modif-employe" action="/appconnect">
           <label class="form-label h4" for="prenomEmploye">Prénom :</label>
           <input
             class="form-control form-control-lg mb-3 h3"

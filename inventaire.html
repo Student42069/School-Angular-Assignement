@@ -4,28 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>LoftSoft</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="bootstrap.min.css" />
-    <script src="bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="css/bootstrap.bundle.min.js"></script>
+    <script src="css/jquery-3.6.0.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="DataTables/jquery.dataTables.min.css"
+    />
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+    <script
+      type="text/javascript"
+      src="DataTables/jquery.dataTables.min.js"
+    ></script>
+
+    <script src="js/script.js"></script>
+
+    <script src="js/inventaire.js"></script>
 
     <script
       src="https://kit.fontawesome.com/b3438c5636.js"
       crossorigin="anonymous"
     ></script>
-
-    <script src="script.js"></script>
-    <script src="jquery-3.6.0.min.js"></script>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="DataTables/datatables.min.css"
-    />
-
-    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
-    <script src="inventaire.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container d-flex flex-column min-vh-100">
       <nav class="navbar navbar-expand-md sticky-top bg-white">
         <a href="index.html" class="navbar-brand">
           <i class="fa-solid fa-otter fa-2xl"></i>
@@ -69,9 +74,20 @@
         </div>
       </nav>
 
-      <div id="table_id"></div>
+      <div class="container">
+        <h1 class="text-center mt-5 mb-3">Inventaire</h1>
+        <table class="display" id="inventaire">
+          <thead>
+            <tr>
+              <th>Catégorie</th>
+              <th>Produit/Service</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
 
-      <footer class="container">
+      <footer class="container mt-auto">
+        <hr class="my-5" />
         <div class="padding container-fluid">
           <div class="row text-center align-items-center">
             <div class="col-lg-4 col-md-3 col-sm-12 mb-5">
@@ -97,7 +113,7 @@
           </div>
         </div>
       </footer>
+      <div id="bottom" class="container-fluid"></div>
     </div>
-    <div id="bottom" class="container-fluid"></div>
   </body>
 </html>

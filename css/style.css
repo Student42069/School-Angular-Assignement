@@ -1,9 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
-
-* {
-  /* font-family: "Open Sans", sans-serif; */
-}
-
 .carousel-item img {
   object-fit: cover;
   object-position: center;
@@ -27,7 +21,7 @@
 }
 
 .parralax-f {
-  background-image: url("pictures/formation.jpg");
+  background-image: url("../pictures/formation.jpg");
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;
@@ -36,7 +30,7 @@
 }
 
 .parralax-d {
-  background-image: url("pictures/dev.jpg");
+  background-image: url("../pictures/dev.jpg");
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;
@@ -45,7 +39,7 @@
 }
 
 .parralax-s {
-  background-image: url("pictures/consulting.jpg");
+  background-image: url("../pictures/consulting.jpg");
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;
@@ -54,7 +48,7 @@
 }
 
 .parralax-t {
-  background-image: url("pictures/telecom.jpg");
+  background-image: url("../pictures/telecom.jpg");
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;

@@ -2,7 +2,7 @@ var donnees = null;
 $.ajax({
   async: false,
   global: false,
-  url: "/jstree.json",
+  url: "js/jstree.json",
   dataType: "json",
   success: function (data) {
     donnees = data;

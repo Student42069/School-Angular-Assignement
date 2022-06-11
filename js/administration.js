@@ -46,31 +46,3 @@ $(document).ready(function () {
     event.preventDefault();
   });
 });
-
-$(document).ready(function () {
-  //Charge les employes
-  var employes = null;
-  $.ajax({
-    async: false,
-    global: false,
-    url: "/jstree.json",
-    dataType: "json",
-    success: function (data) {
-      employes = data;
-    },
-  });
-  employes = employes["core"]["data"];
-  console.log(employes);
-
-  //Gerer la selection du menu
-  $("#menu-employe").click(function () {
-    var employe = $("#menu-employe").find(":selected").text();
-    if (employe == "Nouvel employé") {
-      $("#nomFormation").val("");
-      $("#lieuFormation").val("");
-    } else {
-      // $("#nomFormation").val(employe);
-      // $("#lieuFormation").val(fomations[fomation]);
-    }
-  });
-});
