@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LoftSoft</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <script src="bootstrap.bundle.min.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/b3438c5636.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="DataTables/datatables.min.css"
+    />
+
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+    <script src="inventaire.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-md sticky-top bg-white">
+        <a href="index.html" class="navbar-brand">
+          <i class="fa-solid fa-otter fa-2xl"></i>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent"
+          aria-controls="navbarToggleExternalContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="dev.html" class="nav-link">Développement</a>
+            </li>
+            <li class="nav-item">
+              <a href="infrastructre.html" class="nav-link">Infrastructure</a>
+            </li>
+            <li class="nav-item">
+              <a href="service.html" class="nav-link">Service-conseil</a>
+            </li>
+            <li class="nav-item">
+              <a href="formation.html" class="nav-link">Formation</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+            <button
+              onclick="connexion()"
+              type="button"
+              class="btn btn-outline-primary mx-2"
+            >
+              Connexion
+            </button>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="table_id"></div>
+
+      <footer class="container">
+        <div class="padding container-fluid">
+          <div class="row text-center align-items-center">
+            <div class="col-lg-4 col-md-3 col-sm-12 mb-5">
+              <i class="fa-solid fa-otter fa-2xl"></i>
+              <!-- <p>&copy; LoftSoft</p> -->
+            </div>
+
+            <div class="col-lg-8 col-md-9 col-sm-12 mb-3">
+              <p>
+                Site développé dans le cadre du cours
+                <a
+                  href="https://etudier.uqam.ca/cours?sigle=INF3190"
+                  target="_blank"
+                  >INF3190</a
+                >
+                de l'<a href="http://www.uqam.ca/" target="_blank">UQAM</a>
+              </p>
+              <p>
+                Par Leonid Glazyrin
+                <a href="github.com" target="_blank">Dépôt git</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div id="bottom" class="container-fluid"></div>
+  </body>
+</html>

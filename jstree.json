@@ -1,0 +1,108 @@
+{
+  "core": {
+    "data": [
+      {
+        "id": "dev",
+        "parent": "loftsoft",
+        "text": "Développement",
+        "icon": "fa-solid fa-laptop-code",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "infra",
+        "parent": "loftsoft",
+        "text": "Infrastructure",
+        "icon": "fa-solid fa-tower-cell",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "service",
+        "parent": "loftsoft",
+        "text": "Service-conseil",
+        "icon": "fa-solid fa-handshake",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "formation",
+        "parent": "loftsoft",
+        "text": "Formation",
+        "icon": "fa-solid fa-graduation-cap",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "humaines",
+        "parent": "loftsoft",
+        "text": "Ressources humaines",
+        "icon": "fa-solid fa-people-group",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "el",
+        "parent": "dev",
+        "text": "Esteban, Landrie",
+        "icon": "pictures/esteban.jpg"
+      },
+      {
+        "id": "sb",
+        "parent": "dev",
+        "text": "Stephane, Brisebois",
+        "icon": "pictures/stephane.jpg"
+      },
+      {
+        "id": "db",
+        "parent": "infra",
+        "text": "Diego, Berniquez",
+        "icon": "pictures/diego.jpg"
+      },
+      {
+        "id": "adm",
+        "parent": "infra",
+        "text": "Anathole, Desmontagnes",
+        "icon": "pictures/anathole.jpg"
+      },
+      {
+        "id": "mj",
+        "parent": "humaines",
+        "text": "Margareth, Jonhson",
+        "icon": "pictures/margareth.jpg"
+      },
+      {
+        "id": "dd",
+        "parent": "service",
+        "text": "Dorothee, Desbecs",
+        "icon": "pictures/dorothee.jpeg"
+      },
+      {
+        "id": "cd",
+        "parent": "formation",
+        "text": "Christian, Dior",
+        "icon": "pictures/dior.jpg"
+      },
+      {
+        "id": "ysl",
+        "parent": "formation",
+        "text": "Yves, Saint-Laurent",
+        "icon": "pictures/yves.jpg"
+      },
+      {
+        "id": "loftsoft",
+        "parent": "#",
+        "icon": "fa-solid fa-building fa-xl",
+        "text": "LoftSoft",
+        "state": {
+          "opened": true
+        }
+      }
+    ]
+  }
+}
