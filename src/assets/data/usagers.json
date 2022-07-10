@@ -1,0 +1,48 @@
+[
+  {
+    "username": "pablo_escobar",
+    "pw": "12345",
+    "lname": "Escobar",
+    "fname": "Pablo",
+    "role": "user",
+    "photo": "",
+    "email": "pablo.escobar@gmail.com",
+    "status": "client"
+  },
+  {
+    "username": "michael_jordan",
+    "pw": "12345",
+    "lname": "Jordan",
+    "fname": "Michael",
+    "role": "admin",
+    "photo": "",
+    "email": "pablo.escobar@gmail.com",
+    "status": "client"
+  },
+  {
+    "username": "john_cena",
+    "pw": "12345",
+    "lname": "Cena",
+    "fname": "John",
+    "role": "admin",
+    "photo": "",
+    "email": "john.cena@gmail.com",
+    "status": "employe",
+    "dob": "1903-04-12",
+    "tel": "911-420-6969",
+    "dept": "dev"
+  },
+  {
+    "username": "george_waschington",
+    "pw": "12345",
+    "lname": "Waschington",
+    "fname": "George",
+    "role": "user",
+    "photo": "",
+    "email": "george.waschington@gmail.com",
+    "status": "employe",
+    "dob": "1999-11-02",
+    "tel": "514-450-6969",
+    "dept": "infra"
+  }
+]

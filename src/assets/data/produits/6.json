@@ -1,0 +1,9 @@
+{
+  "pki": 6,
+  "name": "Structure de données",
+  "cat": "fc",
+  "desc": "En informatique, une structure de données est une manière d'organiser les données pour les traiter plus facilement. Une structure de données est une mise en œuvre concrète d'un type abstrait. ",
+  "photo": "../../images/data_structure.png",
+  "video": "../../images/data_structure.png",
+  "prix": 575
+}

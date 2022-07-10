@@ -1,0 +1,9 @@
+{
+  "pki": 4,
+  "name": "MEAN Stack",
+  "cat": "fc",
+  "desc": "MEAN (MongoDB, Express.js, AngularJS (ou Angular) et Node.js) est une pile logicielle JavaScript gratuite et open source pour la création de sites Web et d'applications Web dynamiques.",
+  "photo": "../../images/mean.png",
+  "video": "../../images/mean.png",
+  "prix": 21999
+}

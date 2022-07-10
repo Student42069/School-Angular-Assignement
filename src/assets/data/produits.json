@@ -1,0 +1,110 @@
+[
+  {
+    "pki": 1,
+    "name": "Logiciel C++",
+    "cat": "dev",
+    "desc": "C++ est un langage de programmation compilé permettant la programmation sous de multiples paradigmes, dont la programmation procédurale, la programmation orientée objet et la programmation générique. Ses bonnes performances, et sa compatibilité avec le C en font un des langages de programmation les plus utilisés dans les applications où la performance est critique. ",
+    "photo": "cplus.png",
+    "video": "../../images/cplus.png",
+    "prix": 21999
+  },
+  {
+    "pki": 2,
+    "name": "Logiciel Java",
+    "cat": "dev",
+    "desc": "Une particularité de Java est que les logiciels écrits dans ce langage sont compilés vers une représentation binaire intermédiaire qui peut être exécutée dans une machine virtuelle Java (JVM) en faisant abstraction du système d'exploitation.",
+    "photo": "java.png",
+    "video": "../../images/java.png",
+    "prix": 7599
+  },
+  {
+    "pki": 3,
+    "name": "Application Web avec ReactJS",
+    "cat": "dev",
+    "desc": "React (aussi appelé React.js ou ReactJS) est une bibliothèque JavaScript libre développée par Facebook depuis 2013. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants dépendant d'un état et générant une page (ou portion) HTML à chaque changement d'état.",
+    "photo": "react.png",
+    "video": "../../images/react.png",
+    "prix": 4995
+  },
+  {
+    "pki": 4,
+    "name": "MEAN Stack",
+    "cat": "fc",
+    "desc": "MEAN (MongoDB, Express.js, AngularJS (ou Angular) et Node.js) est une pile logicielle JavaScript gratuite et open source pour la création de sites Web et d'applications Web dynamiques.",
+    "photo": "mean.png",
+    "video": "../../images/mean.png",
+    "prix": 21999
+  },
+  {
+    "pki": 5,
+    "name": "Déploiment d'application web",
+    "cat": "fc",
+    "desc": "Déployer une application ou un site web signifie appliquer un procédé permettant d'installer ou mettre à jour le site web sur un environnement donné.",
+    "photo": "deploy.png",
+    "video": "../../images/deploy.png",
+    "prix": 499
+  },
+  {
+    "pki": 6,
+    "name": "Structure de données",
+    "cat": "fc",
+    "desc": "En informatique, une structure de données est une manière d'organiser les données pour les traiter plus facilement. Une structure de données est une mise en œuvre concrète d'un type abstrait. ",
+    "photo": "data_structure.png",
+    "video": "../../images/data_structure.png",
+    "prix": 575
+  },
+  {
+    "pki": 7,
+    "name": "Brancher le téléphone",
+    "cat": "infra",
+    "desc": "Un standard d’entreprise ou standard téléphonique d’entreprise est un commutateur, à savoir un système qui gère de manière automatique  les communications téléphoniques entrantes et sortantes. ",
+    "photo": "phone.png",
+    "video": "../../images/phone.png",
+    "prix": 399
+  },
+  {
+    "pki": 8,
+    "name": "Installer wifi en entreprise",
+    "cat": "infra",
+    "desc": "L'installation de bornes Wifi professionnelles vous permettra la configuration de plusieurs accès. En effet, une entreprise doit veiller à ce que l'accès à son réseau reste strictement professionnel et réservé à son personnel. Il est donc indispensable de créer un double accès Wifi.",
+    "photo": "wifi.png",
+    "video": "../../images/wifi.png",
+    "prix": 2500
+  },
+  {
+    "pki": 9,
+    "name": "Installation satellite Starlink",
+    "cat": "infra",
+    "desc": "Les utilisateurs Starlink pour entreprises peuvent s’attendre à des vitesses de téléchargement de 150 à 500 Mbit/s et à une latence de 20 à 40 ms. Cela permet une connectivité à haut débit pour les bureaux comptant jusqu’à 20 utilisateurs, les boutiques et les charges de travail lourdes à travers le monde.",
+    "photo": "starlink.png",
+    "video": "../../images/starlink.png",
+    "prix": 69420
+  },
+  {
+    "pki": 10,
+    "name": "Agmenter la demande pour votre logiciel",
+    "cat": "sc",
+    "desc": "Comme vous le savez, le monde des technologies et du logiciel change beaucoup. Mais il y a une chose qui demeure : le succès d'un projet logiciel est grandement lié à son adoption par ses utilisateurs.",
+    "photo": "software.png",
+    "video": "../images/software.png",
+    "prix": 2399
+  },
+  {
+    "pki": 11,
+    "name": "Menez vos logiciels a completion",
+    "cat": "sc",
+    "desc": "La gestion de l'ensemble des versions d'un logiciel et de celles de ses différents éléments (sa gestion de versions) requiert l'utilisation d'un système de gestion de configuration. Un tel système permet l'existence simultanée de plusieurs versions du logiciel, en développement ou en maintenance.",
+    "photo": "completion.jpg",
+    "video": "../images/completion.jpg",
+    "prix": 1799
+  },
+  {
+    "pki": 12,
+    "name": "Gestion d'equipe",
+    "cat": "sc",
+    "desc": "Une bonne gestion d'équipe repose sur votre capacité à comprendre ce qui motive la réussite de votre équipe et à la soutenir. Que vous endossiez le rôle de manager pour la première fois ou que vous cherchiez à affiner vos compétences, une bonne gestion d'équipe vous aidera à gagner en efficacité.",
+    "photo": "equipe.jpeg",
+    "video": "../images/software.png",
+    "prix": 1961
+  }
+]

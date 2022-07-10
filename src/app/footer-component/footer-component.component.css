@@ -1,0 +1,21 @@
+#bottom {
+  background: #3a86ff;
+  height: 20px;
+}
+
+.social a {
+  font-size: 3rem;
+}
+
+.fa-facebook {
+  color: #3b5998;
+}
+.fa-instagram {
+  color: #fd1d1d;
+}
+.fa-twitter {
+  color: #00aced;
+}
+.fa-github {
+  color: #6e5494;
+}

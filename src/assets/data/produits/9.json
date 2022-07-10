@@ -1,0 +1,9 @@
+{
+  "pki": 9,
+  "name": "Installation satellite Starlink",
+  "cat": "infra",
+  "desc": "Les utilisateurs Starlink pour entreprises peuvent s’attendre à des vitesses de téléchargement de 150 à 500 Mbit/s et à une latence de 20 à 40 ms. Cela permet une connectivité à haut débit pour les bureaux comptant jusqu’à 20 utilisateurs, les boutiques et les charges de travail lourdes à travers le monde.",
+  "photo": "../../images/starlink.png",
+  "video": "../../images/starlink.png",
+  "prix": 7499
+}
