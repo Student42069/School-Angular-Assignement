@@ -7,7 +7,7 @@ import { EmployesComponentComponent } from './employes-component/employes-compon
 import { ErrorComponentComponent } from './error-component/error-component.component';
 import { FcComponentComponent } from './fc-component/fc-component.component';
 import { InfraComponentComponent } from './infra-component/infra-component.component';
-import { LoggedInGuard } from './logged-in.guard';
+import { LoggedInAdminGuard } from './logged-in-admin.guard';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { LogoutComponentComponent } from './logout-component/logout-component.component';
 import { PanierComponentComponent } from './panier-component/panier-component.component';
@@ -20,17 +20,20 @@ const routes: Routes = [
   { path: 'service-conseil', component: ScComponentComponent },
   { path: 'formation', component: FcComponentComponent },
   { path: 'login', component: LoginComponentComponent },
-  { path: 'logout', component: LogoutComponentComponent },
+  {
+    path: 'logout',
+    component: LogoutComponentComponent,
+  },
   { path: 'panier', component: PanierComponentComponent },
   {
     path: 'employes',
     component: EmployesComponentComponent,
-    canActivate: [LoggedInGuard],
+    canActivate: [LoggedInAdminGuard],
   },
   {
     path: 'admin',
     component: AdminComponentComponent,
-    canActivate: [LoggedInGuard],
+    canActivate: [LoggedInAdminGuard],
   },
   { path: '**', component: ErrorComponentComponent },
 ];

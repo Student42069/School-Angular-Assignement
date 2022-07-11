@@ -22,6 +22,14 @@ import { ProduitsComponentComponent } from './produits-component/produits-compon
 import { ErrorComponentComponent } from './error-component/error-component.component';
 import { FormsModule } from '@angular/forms';
 
+import { MatSliderModule } from '@angular/material/slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MaterialExampleModule } from '../material.module';
+import { MatNativeDateModule } from '@angular/material/core';
+import { BsListComponent } from './bs-list/bs-list.component';
+import { UserFormComponent } from './user-form/user-form.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,12 +48,19 @@ import { FormsModule } from '@angular/forms';
     ProduitComponentComponent,
     ProduitsComponentComponent,
     ErrorComponentComponent,
+    BsListComponent,
+    UserFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatSliderModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    MaterialExampleModule,
     ReactiveFormsModule,
   ],
   providers: [],

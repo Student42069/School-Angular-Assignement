@@ -29,7 +29,11 @@ export class LoginComponentComponent implements OnInit {
       if (user.length != 1) {
         this.accountInvalid = true;
       } else {
-        this.router.navigate(['/admin']);
+        if (user[0].role == 'admin') {
+          this.router.navigate(['/admin']);
+        } else {
+          this.router.navigate(['/panier']);
+        }
         this.authService.setCurrentLoggedIn(user[0]);
       }
     });

@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import produits from '../assets/data/produits.json';
+import users from '../assets/data/usagers.json';
 import { Observable, of } from 'rxjs';
 import { Produit } from './produit';
 import { HttpClient } from '@angular/common/http';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BdService {
-  private lstPanier: string[] = [];
+  lstPanier: string[] = [];
+  panier: Produit[] = [];
 
   getData(filename: string): Observable<any[]> {
     let url: string =
@@ -20,31 +23,35 @@ export class BdService {
     //de-commenter celle d'en bas, alors il n'y aura pas d'appel http
     //mais l'application va fonctionner
 
-    //return of(produits);
+    // if (filename === 'produits.json') {
+    //   return of(produits);
+    // } else {
+    //   return of(users);
+    // }
   }
 
-  postData(filename: string, data: any[]) {}
+  postData(filename: string, data: any[]) {
+    return this.http.post<User[]>(filename, data);
+  }
 
-  updateProduits() {
-    //Methode inutile et redondante
-    //De plus ce n'est pas pratique d'avoir a aller dans le panier
-    //pour enlever un produit, au lieu de pouvoir le retirer du panier
-    //sur la meme page ou il a ete ajoute.
+  updateProduits(): void {
+    this.getProduits().subscribe((produits) => {
+      this.panier = produits.filter(
+        (produit) => this.lstPanier.indexOf(produit.pki.toString()) != -1
+      );
+    });
   }
 
   getProduits(): Observable<Produit[]> {
     return this.getData('produits.json');
   }
 
-  getPanier(): Observable<Produit[]> {
-    let panier: Produit[] = [];
-    this.getProduits().subscribe(
-      (produits) =>
-        (panier = produits.filter(
-          (produit) => this.getlstPanier().indexOf(produit.pki.toString()) != -1
-        ))
-    );
-    return of(panier);
+  getUsagers(): Observable<User[]> {
+    return this.getData('usagers.json');
+  }
+
+  getPanier(): Produit[] {
+    return this.panier;
   }
 
   togglePanier(pki: string) {
@@ -54,10 +61,7 @@ export class BdService {
     } else {
       this.lstPanier.splice(index, 1);
     }
-  }
-
-  getlstPanier(): string[] {
-    return this.lstPanier;
+    this.updateProduits();
   }
 
   constructor(private http: HttpClient) {}

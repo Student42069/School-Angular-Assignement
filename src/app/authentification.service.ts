@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import users from '../assets/data/usagers.json';
 import { Observable, of } from 'rxjs';
 import { User } from './user';
 import { Router } from '@angular/router';
+import { BdService } from './bd.service';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +12,11 @@ export class AuthentificationService {
   isLoggedIn: boolean = false;
 
   getUsers(): Observable<User[]> {
-    const USERS = of(users);
-    return USERS;
+    return this.bdService.getUsagers();
+  }
+
+  getCurrentLoggedIn(): User | '' {
+    return this.currentLoggedIn;
   }
 
   setCurrentLoggedIn(user: User | ''): void {
@@ -29,5 +32,5 @@ export class AuthentificationService {
     return this.currentLoggedIn != '' && this.currentLoggedIn.role == 'admin';
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private bdService: BdService) {}
 }

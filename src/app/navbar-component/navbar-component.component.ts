@@ -17,6 +17,10 @@ export class NavbarComponentComponent implements OnInit {
     return this.auth.isLoggedIn;
   }
 
+  get isAdminLoggedIn(): boolean {
+    return this.auth.isLoggedInAdmin();
+  }
+
   constructor(private auth: AuthentificationService, private router: Router) {}
 
   ngOnInit(): void {}

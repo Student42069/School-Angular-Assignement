@@ -10,23 +10,15 @@ import { Output, EventEmitter } from '@angular/core';
 })
 export class ProduitComponentComponent implements OnInit {
   @Input('article') article!: Produit;
-  @Output() newItemEvent = new EventEmitter<string>();
   textePanier = 'Ajouter au panier';
-
-  updatePanier() {
-    this.newItemEvent.emit();
-  }
 
   addCart() {
     this.bdService.togglePanier(this.article.pki.toString());
     this.btnTextToggle();
-    this.updatePanier();
   }
 
   btnTextToggle() {
-    if (
-      this.bdService.getlstPanier().indexOf(this.article.pki.toString()) == -1
-    ) {
+    if (this.bdService.lstPanier.indexOf(this.article.pki.toString()) == -1) {
       this.textePanier = 'Ajouter au panier';
     } else {
       this.textePanier = 'Retirer du panier';

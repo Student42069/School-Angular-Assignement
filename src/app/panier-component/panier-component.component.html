@@ -1,11 +1,17 @@
 <div class="container-fluid padding w-75 mb-5">
   <div class="col-12 text-center">
-    <h1 class="display-4">Panier :</h1>
+    <h1 *ngIf="currentLoggedIn == ''" class="display-4">Panier :</h1>
+    <h1 *ngIf="currentLoggedIn != ''" class="display-4">
+      Panier de {{ currentLoggedIn.lname }}, {{ currentLoggedIn.fname }} :
+    </h1>
+    <h1 class="fs-1">
+      Votre total : {{ getTotal | currency: "CAD":"symbol":"3.2-2" }}
+    </h1>
   </div>
 
   <hr class="mb-5 mt-4" />
 
-  <ng-container *ngIf="panier.length == 0">
+  <ng-container *ngIf="getProduitsPanier.length == 0">
     <div class="alert alert-warning" role="alert">
       <h4 class="alert-heading">Votre panier est vide !</h4>
       <hr />
@@ -17,11 +23,8 @@
   </ng-container>
 
   <div class="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 g-4">
-    <ng-container *ngFor="let article of panier">
-      <app-produit-component
-        (newItemEvent)="getPanier()"
-        [article]="article"
-      ></app-produit-component>
+    <ng-container *ngFor="let article of getProduitsPanier">
+      <app-produit-component [article]="article"></app-produit-component>
     </ng-container>
   </div>
 </div>

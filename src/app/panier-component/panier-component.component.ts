@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthentificationService } from '../authentification.service';
 import { BdService } from '../bd.service';
 import { Produit } from '../produit';
+import { User } from '../user';
 
 @Component({
   selector: 'app-panier-component',
@@ -8,17 +10,23 @@ import { Produit } from '../produit';
   styleUrls: ['./panier-component.component.css'],
 })
 export class PanierComponentComponent implements OnInit {
-  panier: Produit[] = [];
-
-  getPanier(): void {
-    this.bdService
-      .getPanier()
-      .subscribe((produits) => (this.panier = produits));
+  get getTotal(): number {
+    let total = this.getProduitsPanier.reduce((accumulator, object) => {
+      return accumulator + object.prix;
+    }, 0);
+    return total;
   }
 
-  constructor(private bdService: BdService) {}
+  currentLoggedIn: User | '' = this.authService.getCurrentLoggedIn();
 
-  ngOnInit(): void {
-    this.getPanier();
+  get getProduitsPanier(): Produit[] {
+    return this.bdService.getPanier();
   }
+
+  constructor(
+    private bdService: BdService,
+    private authService: AuthentificationService
+  ) {}
+
+  ngOnInit(): void {}
 }

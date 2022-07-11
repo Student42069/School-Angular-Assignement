@@ -61,6 +61,16 @@
         >
       </li>
 
+      <li *ngIf="isAdminLoggedIn" class="nav-item">
+        <a
+          routerLink="/admin"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent"
+          class="nav-link me-2"
+          >Admin</a
+        >
+      </li>
+
       <button
         *ngIf="!isLoggedIn"
         routerLink="/login"
