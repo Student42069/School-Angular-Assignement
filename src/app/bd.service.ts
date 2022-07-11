@@ -30,9 +30,7 @@ export class BdService {
     // }
   }
 
-  postData(filename: string, data: any[]) {
-    return this.http.post<User[]>(filename, data);
-  }
+  postData(filename: string, data: any[]) {}
 
   updateProduits(): void {
     this.getProduits().subscribe((produits) => {

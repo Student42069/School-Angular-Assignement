@@ -92,10 +92,6 @@ export class UserFormComponent implements OnInit {
   terminer(i: number) {
     this.enModification[i] = false;
     this.canAdd = true;
-    this.bdService.postData(
-      'etststtstststststststtststs.json',
-      this.usersForms.value
-    );
   }
 
   ngOnInit(): void {
