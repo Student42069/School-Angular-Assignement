@@ -1,27 +1,42 @@
+# TP2 pour INF3190 - Introduction à la programmation web été 2022
+
 # VsiApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+## Testé et developé sur Mozilla Firefox
 
-## Development server
+## Le site est déployé en ligne au : https://adorable-rugelach-4a6b2e.netlify.app/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tester sur sa mahine :
 
-## Code scaffolding
+Dans un terminal :
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> ```csh
+> git clone https://gitlab.info.uqam.ca/glazyrin.leonid/>inf3190-e22-tp.git
+> git checkout TP2_E2022
+> ng serve
+> ```
 
-## Build
+### Allumer le serveur test pour les requetes GET/POST
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Aller dans le repertoire /tpapp :
 
-## Running unit tests
+- Installer [node.js](https://nodejs.org)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> - Pour installer les modules node.js requis
 
-## Running end-to-end tests
+> ```csh
+> npm install npm-install-all -g
+> npm-install-all
+> ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+> - Pour démarrer l'application
 
-## Further help
+> ```csh
+> node tpapp.js
+> ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Si tout va bien, un numéro de port s'affichera (ex: 3000)
+
+## Contruire
+
+Dans un terminal en etant dans ce dossier `ng build`. Sera enrigistree dans le dossier `dist/`.
