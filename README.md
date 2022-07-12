@@ -40,3 +40,5 @@ Aller dans le repertoire /tpapp :
 ## Note3 : La creation/modification des usagers utilisent la fonction postdata.
 
 ## Note4 : Si celui qui se connecte a le role admin, il sera dirige vers la page admin et un lien admin sera rajouter dans la barre. Si cest un client, il sera dirige vers le panier.
+
+## Note5 : Lorsque on utilise le site dont le lien est en haut deploye la table des employe n'est pas correct a cause que l'appel getEmploye() est altere, car il n'y a pas de GET
