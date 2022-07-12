@@ -37,4 +37,6 @@ Aller dans le repertoire /tpapp :
 
 ## Note2 : Pour qu'un utilisateur puisse etre ajouter tout les champs doivent etre rempli et le username unique. L'affichage des photos des usagers rajoute n'est pas implemente.
 
-## Note3 : La creation/modification des usagers utilisent la fonction postdata
+## Note3 : La creation/modification des usagers utilisent la fonction postdata.
+
+## Note4 : Si celui qui se connecte a le role admin, il sera dirige vers la page admin et un lien admin sera rajouter dans la barre. Si cest un client, il sera dirige vers le panier.
