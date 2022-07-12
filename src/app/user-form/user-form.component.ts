@@ -92,6 +92,22 @@ export class UserFormComponent implements OnInit {
   terminer(i: number) {
     this.enModification[i] = false;
     this.canAdd = true;
+    this.save();
+  }
+
+  save() {
+    let savestatus: any;
+    let datatosave = this.usersForms.getRawValue();
+    console.log(datatosave);
+    let filename = './../src/assets/data/usagers.json';
+
+    let obs = this.bdService
+      .postData(filename, datatosave)
+      .subscribe((data: any) => (savestatus = data));
+    setTimeout(() => {
+      console.log(savestatus);
+      this.getUsagers();
+    }, 1000);
   }
 
   ngOnInit(): void {

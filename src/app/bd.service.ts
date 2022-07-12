@@ -30,7 +30,15 @@ export class BdService {
     // }
   }
 
-  postData(filename: string, data: any[]) {}
+  postData(filename: string, data: any) {
+    let posturl: string = 'http://localhost:3000/postjson';
+    const params = {
+      data: JSON.stringify(data),
+      file: filename,
+    };
+    console.log(params);
+    return this.http.post<any>(posturl, params);
+  }
 
   updateProduits(): void {
     this.getProduits().subscribe((produits) => {

@@ -4,7 +4,7 @@
 
 ## Testé et developé sur Mozilla Firefox
 
-## Le site est déployé en ligne au : https://adorable-rugelach-4a6b2e.netlify.app/
+## Le site est déployé en ligne au : https://stunning-rabanadas-84162e.netlify.app/(Mais n'utilise pas de POST/GET)
 
 ## Tester sur sa mahine :
 
