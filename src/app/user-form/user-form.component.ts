@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -9,6 +9,7 @@ import {
 import { BdService } from '../bd.service';
 import { User } from '../user';
 import { ChangeDetectorRef } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user-form',
@@ -17,21 +18,26 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 export class UserFormComponent implements OnInit {
   myForm!: FormGroup;
-  constructor(
-    private fb: FormBuilder,
-    private bdService: BdService,
-    private ref: ChangeDetectorRef
-  ) {}
   USAGERS: User[] = [];
   enModification: boolean[] = [];
   isEmploye: boolean[] = [];
   canAdd: boolean = true;
   pwVisible: string[] = [];
 
-  get canItAdd(): boolean {
-    return !this.canAdd;
+  constructor(
+    private fb: FormBuilder,
+    private bdService: BdService,
+    private ref: ChangeDetectorRef
+  ) {}
+
+  ngOnInit(): void {
+    this.myForm = this.fb.group({
+      users: this.fb.array([]),
+    });
+    this.getUsagers();
   }
 
+  //Pour recuperer les usagers du fichier json
   getUsagers(): void {
     this.bdService.getUsagers().subscribe((usagers) => {
       this.USAGERS = usagers;
@@ -39,6 +45,7 @@ export class UserFormComponent implements OnInit {
     });
   }
 
+  //Pour charger dans les formulaire les usagers deja existants
   loadUsers() {
     const formArray = this.usersForms;
     this.USAGERS.map((item) => {
@@ -47,8 +54,10 @@ export class UserFormComponent implements OnInit {
     this.myForm.setControl('users', formArray);
   }
 
+  //Pour cree le formulaire associe a chaque usager DEJA existant
   createForms(user: User): FormGroup {
     let formGroup: FormGroup;
+    //Si employe
     if (user.dept) {
       formGroup = new FormGroup({
         username: new FormControl(user.username, [Validators.required]),
@@ -65,6 +74,7 @@ export class UserFormComponent implements OnInit {
       });
       this.isEmploye.push(true);
     } else {
+      //Si client
       formGroup = new FormGroup({
         username: new FormControl(user.username, [Validators.required]),
         pw: new FormControl(user.pw, [Validators.required]),
@@ -82,6 +92,7 @@ export class UserFormComponent implements OnInit {
     return formGroup;
   }
 
+  //Appeler lorsquon clique sur un bouton modifie
   modifier(i: number) {
     this.enModification[i] = true;
     this.canAdd = false;
@@ -89,16 +100,18 @@ export class UserFormComponent implements OnInit {
     this.ref.detectChanges();
   }
 
+  //Appelle lorsquon clique sur terminer
   terminer(i: number) {
     this.enModification[i] = false;
     this.canAdd = true;
     this.save();
   }
 
+  //Appeller a chaque fois qu'on clique sur terminer
+  //pour sauvgarder les usagers avec POST
   save() {
     let savestatus: any;
     let datatosave = this.usersForms.getRawValue();
-    console.log(datatosave);
     let filename = './../src/assets/data/usagers.json';
 
     let obs = this.bdService
@@ -106,21 +119,11 @@ export class UserFormComponent implements OnInit {
       .subscribe((data: any) => (savestatus = data));
     setTimeout(() => {
       console.log(savestatus);
-      this.getUsagers();
+      // this.getUsagers();
     }, 1000);
   }
 
-  ngOnInit(): void {
-    this.myForm = this.fb.group({
-      users: this.fb.array([]),
-    });
-    this.getUsagers();
-  }
-
-  get usersForms() {
-    return this.myForm.get('users') as FormArray;
-  }
-
+  //Ajouter un usager vide
   addUser() {
     const newUser = this.fb.group({
       username: ['', [Validators.required]],
@@ -139,6 +142,7 @@ export class UserFormComponent implements OnInit {
     this.pwVisible.push('password');
   }
 
+  //Si role est employe on rajoute 3 form control a l'usager
   setEmploye(i: number) {
     this.isEmploye[i] = true;
     (this.usersForms.at(i) as FormGroup).addControl(
@@ -155,6 +159,7 @@ export class UserFormComponent implements OnInit {
     );
   }
 
+  //Si cest un client on enleve les 3 formcontrols
   setClient(i: number) {
     this.isEmploye[i] = false;
     (this.usersForms.at(i) as FormGroup).removeControl('dob');
@@ -170,11 +175,35 @@ export class UserFormComponent implements OnInit {
     this.canAdd = true;
   }
 
+  //Renvoie si tout les username sont uniques
+  get isUnique(): boolean {
+    const unique = [
+      ...new Set(
+        this.usersForms.getRawValue().map((user: User) => user.username)
+      ),
+    ];
+    return unique.length == this.usersForms.getRawValue().length;
+  }
+
+  //Pour le texte du bouton afficher cacher mot de passe
   togglePW(i: number) {
     this.pwVisible[i] = this.pwVisible[i] == 'password' ? 'text' : 'password';
   }
 
+  //Pour afficher remarque que le lien de la photo est bien enrigistrer
+  //mais dans le formulaire il nest pas affiche, je nai pas reussi a regler le probleme
+  //mais un message est affiche (title)
   getPhoto(i: number) {
     return (this.usersForms.at(i) as FormGroup).controls['photo'].value;
+  }
+
+  get usersForms() {
+    return this.myForm.get('users') as FormArray;
+  }
+
+  //Retourne vrai si aucun usager nest en modification/creation
+  //Faux sinon
+  get canItAdd(): boolean {
+    return !this.canAdd;
   }
 }

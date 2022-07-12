@@ -35,7 +35,11 @@
               <input
                 type="text"
                 class="form-control"
-                [ngClass]="user.value['username'] ? 'is-valid' : 'is-invalid'"
+                [ngClass]="
+                  user.value['username'].invalid || !isUnique
+                    ? 'is-invalid'
+                    : 'is-valid'
+                "
                 id="username"
                 formControlName="username"
               />
@@ -157,7 +161,7 @@
             <div class="col-12">
               <button
                 class="btn btn-primary btn-lg me-2"
-                [disabled]="user.invalid"
+                [disabled]="user.invalid || !isUnique"
                 (click)="terminer(i)"
               >
                 Terminer

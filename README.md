@@ -1,10 +1,8 @@
 # TP2 pour INF3190 - Introduction à la programmation web été 2022
 
-# VsiApp
-
 ## Testé et developé sur Mozilla Firefox
 
-## Le site est déployé en ligne au : https://stunning-rabanadas-84162e.netlify.app/(Mais n'utilise pas de POST/GET)
+## Le site est déployé en ligne au : https://stunning-rabanadas-84162e.netlify.app/ (Mais n'utilise pas de POST/GET)
 
 ## Tester sur sa mahine :
 
@@ -12,7 +10,10 @@ Dans un terminal :
 
 > ```csh
 > git clone https://gitlab.info.uqam.ca/glazyrin.leonid/>inf3190-e22-tp.git
+> cd inf3190-e22-tp
 > git checkout TP2_E2022
+> npm install npm-install-all -g
+> npm-install-all
 > ng serve
 > ```
 
@@ -20,12 +21,9 @@ Dans un terminal :
 
 Aller dans le repertoire /tpapp :
 
-- Installer [node.js](https://nodejs.org)
-
 > - Pour installer les modules node.js requis
 
 > ```csh
-> npm install npm-install-all -g
 > npm-install-all
 > ```
 
@@ -35,8 +33,8 @@ Aller dans le repertoire /tpapp :
 > node tpapp.js
 > ```
 
-- Si tout va bien, un numéro de port s'affichera (ex: 3000)
+## Note : Tres important de partir le tpapp.js qui est dans le dossier tpapp qui est au meme diveau que le dossier /src. Comme fourni.
 
-## Contruire
+## Note2 : Pour qu'un utilisateur puisse etre ajouter tout les champs doivent etre rempli et le username unique. L'affichage des photos des usagers rajoute n'est pas implemente.
 
-Dans un terminal en etant dans ce dossier `ng build`. Sera enrigistree dans le dossier `dist/`.
+## Note3 : La creation/modification des usagers utilisent la fonction postdata
