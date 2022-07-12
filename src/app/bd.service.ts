@@ -36,7 +36,6 @@ export class BdService {
       data: JSON.stringify(data),
       file: filename,
     };
-    console.log(params);
     return this.http.post<any>(posturl, params);
   }
 
