@@ -9,7 +9,7 @@
 Dans un terminal :
 
 > ```csh
-> git clone https://gitlab.info.uqam.ca/glazyrin.leonid/>inf3190-e22-tp.git
+> git clone git@gitlab.info.uqam.ca:glazyrin.leonid/inf3190-e22-tp.git
 > cd inf3190-e22-tp
 > git checkout TP2_E2022
 > npm install npm-install-all -g
