@@ -1,0 +1,9 @@
+{
+  "pki": 7,
+  "name": "Brancher le téléphone",
+  "cat": "infra",
+  "desc": "Un standard d’entreprise ou standard téléphonique d’entreprise est un commutateur, à savoir un système qui gère de manière automatique  les communications téléphoniques entrantes et sortantes. ",
+  "photo": "../../images/phone.png",
+  "video": "../../images/phone.png",
+  "prix": 399
+}

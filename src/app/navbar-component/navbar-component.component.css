@@ -1,0 +1,3 @@
+.navbar-collapse.collapsing {
+  transition: none !important;
+}

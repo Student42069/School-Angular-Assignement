@@ -1,0 +1,9 @@
+{
+  "pki": 2,
+  "name": "Logiciel Java",
+  "cat": "dev",
+  "desc": "Une particularité de Java est que les logiciels écrits dans ce langage sont compilés vers une représentation binaire intermédiaire qui peut être exécutée dans une machine virtuelle Java (JVM) en faisant abstraction du système d'exploitation.",
+  "photo": "../../images/java.png",
+  "video": "../../images/java.png",
+  "prix": 21999
+}

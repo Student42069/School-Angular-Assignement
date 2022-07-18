@@ -1,0 +1,19 @@
+<h1 class="my-4">Liste des clients :</h1>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr class="table-info">
+      <th scope="col">Nom d'utilisateur</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Courriel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of CLIENTS">
+      <th scope="row">{{ client.username }}</th>
+      <td>{{ client.lname }}</td>
+      <td>{{ client.fname }}</td>
+      <td>{{ client.email }}</td>
+    </tr>
+  </tbody>
+</table>

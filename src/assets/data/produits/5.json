@@ -1,0 +1,9 @@
+{
+  "pki": 5,
+  "name": "Déploiment d'application web",
+  "cat": "fc",
+  "desc": "Déployer une application ou un site web signifie appliquer un procédé permettant d'installer ou mettre à jour le site web sur un environnement donné.",
+  "photo": "../../images/deploy.png",
+  "video": "../../images/deploy.png",
+  "prix": 499
+}

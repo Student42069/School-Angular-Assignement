@@ -1,0 +1,13 @@
+.parralax {
+  background-image: url("../../assets/images/consulting.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#brands img {
+  width: 200px;
+  max-height: 100px;
+}

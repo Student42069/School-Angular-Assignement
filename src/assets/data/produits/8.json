@@ -1,0 +1,9 @@
+{
+  "pki": 8,
+  "name": "Installer wifi en entreprise",
+  "cat": "infra",
+  "desc": "L'installation de bornes Wifi professionnelles vous permettra la configuration de plusieurs accès. En effet, une entreprise doit veiller à ce que l'accès à son réseau reste strictement professionnel et réservé à son personnel. Il est donc indispensable de créer un double accès Wifi.",
+  "photo": "../../images/wifi.png",
+  "video": "../../images/wifi.png",
+  "prix": 2500
+}

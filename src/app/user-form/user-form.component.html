@@ -1,0 +1,235 @@
+<div class="container mb-5 mt-4">
+  <h1 class="mb-4">Liste des usagers :</h1>
+  <form [formGroup]="myForm" class="mt-3">
+    <!-- <h1>{{ myForm.value | json }}</h1> -->
+
+    <div formArrayName="users">
+      <div
+        *ngFor="let user of usersForms.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <div class="container">
+          <div *ngIf="enModification[i]" class="row g-3 mb-5">
+            <div class="col-md-6 text-start">
+              <label for="lname" class="form-label">Nom</label>
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="user.value['lname'] ? 'is-valid' : 'is-invalid'"
+                id="lname"
+                formControlName="lname"
+              />
+            </div>
+            <div class="col-md-6 text-start">
+              <label for="fname" class="form-label">Prenom</label>
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="user.value['fname'] ? 'is-valid' : 'is-invalid'"
+                id="fname"
+                formControlName="fname"
+              />
+            </div>
+            <div class="col-md-6 text-start">
+              <label for="username" class="form-label">Nom d'utilisateur</label>
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="
+                  user.value['username'].invalid || !isUnique
+                    ? 'is-invalid'
+                    : 'is-valid'
+                "
+                id="username"
+                formControlName="username"
+              />
+            </div>
+            <div class="col-md-6 text-start">
+              <label for="pw" class="form-label">Mot de passe</label>
+              <div class="input-group mb-3">
+                <input
+                  [type]="pwVisible[i]"
+                  class="form-control"
+                  [ngClass]="user.value['pw'] ? 'is-valid' : 'is-invalid'"
+                  id="pw"
+                  placeholder="Lettres, chiffres, _ ou -"
+                  formControlName="pw"
+                />
+                <button
+                  class="btn btn-outline-secondary"
+                  (click)="togglePW(i)"
+                  type="button"
+                >
+                  {{ pwVisible[i] == "password" ? "Montrer" : "Cacher" }}
+                </button>
+              </div>
+            </div>
+            <div class="col-12 text-start">
+              <label for="email" class="form-label">Courriel</label>
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="user.value['email'] ? 'is-valid' : 'is-invalid'"
+                id="email"
+                formControlName="email"
+              />
+            </div>
+            <div class="col-md-4 text-start">
+              <label for="inputState" class="form-label">Role</label>
+              <select
+                id="inputState"
+                class="form-select"
+                [ngClass]="user.value['role'] ? 'is-valid' : 'is-invalid'"
+                formControlName="role"
+              >
+                <option value="user" selected>Utilisateur</option>
+                <option value="admin">Administrateur</option>
+              </select>
+            </div>
+            <div class="col-md-4 text-start">
+              <label for="status" class="form-label">Status</label>
+              <select
+                id="status"
+                class="form-select"
+                formControlName="status"
+                [ngClass]="user.value['status'] ? 'is-valid' : 'is-invalid'"
+              >
+                <option (click)="setClient(i)" value="client" selected>
+                  Client
+                </option>
+                <option (click)="setEmploye(i)" value="employe">Employe</option>
+              </select>
+            </div>
+            <div class="col-md-4 text-start">
+              <label for="photo" class="form-label">Photo</label>
+              <input
+                type="file"
+                class="form-control"
+                [ngClass]="user.value['photo'] ? 'is-valid' : 'is-invalid'"
+                [title]="
+                  user.value['photo']
+                    ? 'Le texte n\'est pas la, mais la photo a ete enrigistre'
+                    : ''
+                "
+                id="photo"
+                formControlName="photo"
+              />
+            </div>
+
+            <ng-container *ngIf="isEmploye[i]">
+              <div class="col-md-4">
+                <label for="dob" class="form-label">Date de naissance</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  [ngClass]="user.value['dob'] ? 'is-valid' : 'is-invalid'"
+                  id="dob"
+                  formControlName="dob"
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="tel" class="form-label">Telephone</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  [ngClass]="user.value['tel'] ? 'is-valid' : 'is-invalid'"
+                  id="tel"
+                  formControlName="tel"
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="dept" class="form-label">Departement</label>
+                <select
+                  id="dept"
+                  class="form-select"
+                  formControlName="dept"
+                  [ngClass]="user.value['dept'] ? 'is-valid' : 'is-invalid'"
+                >
+                  <option value="dev" selected>Devellopement</option>
+                  <option value="infra">Infrastructure</option>
+                  <option value="sc">Service-conseil</option>
+                  <option value="fc">Formation</option>
+                </select>
+              </div>
+            </ng-container>
+
+            <img
+              [src]="'../../assets/images/' + getPhoto(i)"
+              alt="Photo de profil"
+            />
+
+            <div class="col-12">
+              <button
+                class="btn btn-primary btn-lg me-2"
+                [disabled]="user.invalid || !isUnique"
+                (click)="terminer(i)"
+              >
+                Terminer
+              </button>
+              <button
+                class="btn btn-danger btn-lg ms-2"
+                (click)="deleteUser(i)"
+              >
+                Retirer
+              </button>
+            </div>
+          </div>
+
+          <div
+            *ngIf="!enModification[i]"
+            class="row g-3 mb-3 d-flex justify-content-center"
+          >
+            <fieldset [disabled]="true" class="d-flex col-md-8">
+              <div class="col-md-3 text-start me-1">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="lname"
+                />
+              </div>
+
+              <div class="col-md-3 text-start me-1">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="fname"
+                />
+              </div>
+              <div class="col-md-3 text-start me-1">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="username"
+                />
+              </div>
+              <div class="col-md-3 text-start">
+                <select
+                  id="status"
+                  class="form-select"
+                  formControlName="status"
+                >
+                  <option value="client">Client</option>
+                  <option value="employe">Employe</option>
+                </select>
+              </div>
+            </fieldset>
+            <button
+              class="btn btn-primary col-md-2 ms-2"
+              [disabled]="canItAdd"
+              (click)="modifier(i)"
+            >
+              Modifier
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="btn btn-success mt-4 btn-lg"
+      [disabled]="canItAdd"
+      (click)="addUser()"
+    >
+      Ajouter un usager
+    </button>
+  </form>
+</div>

@@ -1,0 +1,54 @@
+<div class="card col">
+  <div
+    [id]="'demo' + article.pki"
+    class="carousel slide mb-5 card-img-top carousel-dark"
+    data-bs-interval="false"
+  >
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          [src]="'../../assets/images/' + article.photo"
+          class="d-block w-100 rounded mx-auto"
+          alt=""
+        />
+      </div>
+
+      <div class="carousel-item">
+        <video controls>
+          <source
+            [src]="'../../assets/images/' + article.video"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </div>
+
+    <!-- Left and right controls/icons -->
+    <button
+      class="carousel-control-prev"
+      type="button"
+      [attr.data-bs-target]="'#demo' + article.pki"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      [attr.data-bs-target]="'#demo' + article.pki"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">{{ article.name }}</h5>
+    <p class="card-text">
+      {{ article.desc }}
+    </p>
+    <p>Prix : {{ article.prix | currency: "CAD":"symbol":"3.2-2" }}</p>
+    <a (click)="addCart()" class="btn btn-primary">{{ textePanier }}</a>
+  </div>
+</div>

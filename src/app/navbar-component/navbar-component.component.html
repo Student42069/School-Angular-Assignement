@@ -1,0 +1,102 @@
+<nav class="navbar navbar-expand-lg bg-white mb-4 fs-5 text-nowrap">
+  <a
+    routerLink=""
+    class="navbar-brand"
+    title="LoftSoft Vente de Service Informatique"
+  >
+    <i class="fa-solid fa-otter fa-2xl"></i>
+    <p class="fs-4 d-inline-block ms-3">LoftSoft VSI</p>
+  </a>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarToggleExternalContent"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a
+          routerLink="/developpement"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent"
+          class="nav-link"
+          >Développement</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/infrastructure"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent"
+          class="nav-link"
+          >Infrastructure</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/service-conseil"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent"
+          class="nav-link"
+          >Service-conseil</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/formation"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent"
+          class="nav-link"
+          >Formation</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/panier"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent"
+          class="nav-link me-2"
+          >Panier</a
+        >
+      </li>
+
+      <li *ngIf="isAdminLoggedIn" class="nav-item">
+        <a
+          routerLink="/admin"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent"
+          class="nav-link me-2"
+          >Admin</a
+        >
+      </li>
+
+      <button
+        *ngIf="!isLoggedIn"
+        routerLink="/login"
+        type="button"
+        class="btn btn-outline-primary me-2 fs-5"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent"
+      >
+        Connexion
+      </button>
+
+      <button
+        *ngIf="isLoggedIn"
+        routerLink="/logout"
+        (click)="logout()"
+        type="button"
+        class="btn btn-outline-primary me-2 fs-5"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent"
+      >
+        Déconnexion
+      </button>
+    </ul>
+  </div>
+</nav>
