@@ -32,13 +32,3 @@ Aller dans le repertoire /tpapp :
 > ```csh
 > node tpapp.js
 > ```
-
-## Note : Tres important de partir le tpapp.js qui est dans le dossier tpapp qui est au meme diveau que le dossier /src. Comme fourni.
-
-## Note2 : Pour qu'un utilisateur puisse etre ajouter tout les champs doivent etre rempli et le username unique. L'affichage des photos des usagers rajoute n'est pas implemente.
-
-## Note3 : La creation/modification des usagers utilisent la fonction postdata.
-
-## Note4 : Si celui qui se connecte a le role admin, il sera dirige vers la page admin et un lien admin sera rajouter dans la barre. Si cest un client, il sera dirige vers le panier.
-
-## Note5 : Lorsque on utilise le site dont le lien est en haut deploye la table des employe n'est pas correct a cause que l'appel getEmploye() est altere, car il n'y a pas de GET
